@@ -1,0 +1,102 @@
+@()
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Cost</title>
+        <link rel="stylesheet"
+        href="@routes.Assets.versioned("stylesheets/bootstrapwatch.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/addcostitem.css")">
+        <script type='text/javascript' src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Cost Manager</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/costs">All Costs</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/add-cost">Add Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/find-cost">Find Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/delete-cost">Delete Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/get-report">Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main id="site-main">
+            <div class="container">
+
+                <div class="text-lg-center">
+                    <h2 class="text-dark">New Cost</h2>
+                </div>
+
+                <form action="@routes.CostItemController.createCostItem" method="post" id="add_cost">
+                    <fieldset>
+                        <div class="new_cost">
+                            <div class="form-group">
+                                <label for="nameInput">Name:</label>
+                                <input type="text" name="name" class="form-control" id="nameInput" placeholder="Enter Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="priceInput">Price:</label>
+                                <input type="text" name="price" class="form-control" id="priceInput" placeholder="Enter Price">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descriptionInput">Description:</label>
+                                <input type="text" name="description" class="form-control" id="descriptionInput"
+                                placeholder="Write Description">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Choose a Category:</label>
+                                <br><select name="category" class="form-control" id="category">
+                                <option value="">Please choose an option</option>
+                                <option value="Bills">Bills</option>
+                                <option value="Education">Education</option>
+                                <option value="Clothes">Clothes</option>
+                                <option value="House">House</option>
+                                <option value="Health">Health</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Food">Food</option>
+                                <option value="Travel">Travel</option>
+                            </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dateInput">Date:</label>
+                                <input type="date" name="date" class="form-control" id="dateInput" placeholder="Select the cost date">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Cost</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </main>
+
+    </body>
+</html>

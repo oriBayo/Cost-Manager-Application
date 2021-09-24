@@ -1,0 +1,42 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Showing the home page
+GET           /                    controllers.AppController.home
+
+# Showing the all costs page
+GET           /costs               controllers.CostItemController.allCosts
+
+# POST request for adding new cost item
++ nocsrf
+POST          /costs               controllers.CostItemController.createCostItem
+
+# GET request for finding cost item
++ nocsrf
+GET           /costs/:id           controllers.CostItemController.getCostItem(id: reactivemongo.bson.BSONObjectID)
+
+# DELETE request for deleting cost item
++ nocsrf
+DELETE        /costs/:id           controllers.CostItemController.deleteCostItem(id: reactivemongo.bson.BSONObjectID)
+
+# Showing the add cost page
+GET           /add-cost            controllers.AppController.addCostItem
+
+# Showing the find cost page
+GET           /find-cost           controllers.AppController.findCostItem
+
+# Showing the delete cost page
+GET           /delete-cost         controllers.AppController.deleteCostItem
+
+# Showing the report page
+GET           /get-report          controllers.AppController.showReport
+
+# GET request for retrieve the report by month
+GET           /report              controllers.CostItemController.report
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+
+      

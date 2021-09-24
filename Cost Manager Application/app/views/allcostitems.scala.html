@@ -1,0 +1,81 @@
+@(costs: Seq[CostItem])
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All Costs</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/bootstrapwatch.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/allcosts.css")">
+        <script type='text/javascript' src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+                <a class="navbar-brand" href="#">Cost Manager</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/costs">All Costs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/add-cost">Add Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/find-cost">Find Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/delete-cost">Delete Cost</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/get-report">Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-lg">
+            <h2 class="text-lg-center">All Costs</h2>
+        </div>
+
+        <div class="container-fluid">
+            <div class="table-active">
+                <table class="table table-hover table-light">
+                    <thead class="thead-dark">
+                        <tr class="title-table">
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for(product <- costs) {
+                        <tr>
+                            <td>@product.name</td>
+                            <td>@product.price</td>
+                            <td>@product.category </td>
+                            <td>@product.description</td>
+                            <td>@product.date</td>
+
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

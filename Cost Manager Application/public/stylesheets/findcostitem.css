@@ -1,0 +1,35 @@
+body{
+    background-image: url("https://crownleadership.com.au/wp-content/uploads/2016/06/business-background-picture-wide-hd-cool-wallpaper-8548.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+}
+
+.text-dark{
+    margin: 40px;
+    font-family: "Apple Color Emoji", "Arial Nova Light";
+}
+.navbar-brand{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.nav-link{
+    margin-right: 10px;
+}
+.bg-primary {
+    padding: 0;
+    height: 60px;
+}
+
+.form-group{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 3px #000000, 0 0 5px #101010;
+
+}
+.btn-primary{
+    margin-top: 15px;
+}
