@@ -7,3 +7,4 @@ Project is created with:
 * Java script
 * Bootstrap V5.1
 * Play Framework 2.8.8
+* MongoDB
